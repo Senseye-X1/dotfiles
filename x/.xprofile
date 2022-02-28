@@ -1,0 +1,2 @@
+setxkbmap se
+xrdb ~/.Xresources
