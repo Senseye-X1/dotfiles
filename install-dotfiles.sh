@@ -8,6 +8,8 @@ git clone https://github.com/Senseye-X1/dotfiles.git
 chmod +x /home/$username/dotfiles/bspwm/\.config/bspwm/bspwmrc
 chmod +x /home/$username/dotfiles/polybar/\.config/polybar/launch.sh
 chmod -R +x /home/$username/dotfiles/scripts/\.scripts
+cd dotfiles
+stow .
 
 cd
 mkdir builds
