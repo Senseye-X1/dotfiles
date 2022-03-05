@@ -10,7 +10,8 @@ super + Return
 super + z
 #	~/.scripts/launcher-alt
 #	rofi -no-lazy-grab -show drun -modi run,drun,window
-dmenu_run -i -m 1 -fn 'Iosevka Nerd Font:pixelsize=19' -nb '#171a1f' -sb '#757575'
+#dmenu_run -i -m 1 -fn 'Iosevka Nerd Font:pixelsize=19' -nb '#171a1f' -sb '#757575'
+dmenu_run -i -m 1 -fn 'Iosevka Nerd Font:pixelsize=19' -nb '#282A36' -sb '#BD93F9'
 
 # exit menu
 super + x
