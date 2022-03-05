@@ -45,7 +45,7 @@ prompt {
     border: 						0;
     vertical-align:					0.5;
     text-color: 					@fg;
-    font:							"Font Awesome 5 Free Solid 12";
+    font:							"Font Awesome 6 Free Solid 12";
 }
 
 textbox-prompt-colon {
@@ -142,7 +142,7 @@ button {
     border: 						0px;
     border-radius: 					0px;
     border-color: 					@fg;
-    font:							"Font Awesome 5 Free Solid 12";
+    font:							"Font Awesome 6 Free Solid 12";
 }
 
 button selected {
