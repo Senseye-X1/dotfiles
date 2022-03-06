@@ -34,10 +34,10 @@ _ gapless_monocle true
 #bspc rule -a Geany desktop='^3'
 #bspc rule -a firefox desktop='^1'
 
-# workspace 4 (Terminals)
-declare -a terminal=(Kitty)
-for i in ${terminal[@]}; do
-    bspc rule -a $i desktop='^4' follow=on focus=on; done
+## workspace 2 (Terminals)
+#declare -a terminal=(Kitty)
+#for i in ${terminal[@]}; do
+#    bspc rule -a $i desktop='^2' follow=on focus=on; done
 
 # workspace 1 (Internet Browser)
 declare -a web=(firefox Google-chrome)
@@ -54,10 +54,10 @@ declare -a office=(Geany)
 for i in ${office[@]}; do
     bspc rule -a $i desktop='^3' follow=on focus=on; done
 
-# workspace 4 (Media)
-declare -a media=(vlc mpv mplayer lxmusic Gimp Gimp-2.10)
-for i in ${media[@]}; do
-    bspc rule -a $i desktop='^4' follow=on focus=on; done
+## workspace 4 (Media)
+#declare -a media=(vlc mpv mplayer lxmusic Gimp Gimp-2.10)
+#for i in ${media[@]}; do
+#    bspc rule -a $i desktop='^4' follow=on focus=on; done
 
 # workspace 4 (Settings)
 declare -a settings=(Lxappearance Pavucontrol)
