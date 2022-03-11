@@ -1,0 +1,15 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) audio-output.sh ;;
+	2) pamixer -t ;;
+	4) pamixer -i 5 ;;
+	5) pamixer -d 5 ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+[ $(pamixer --get-mute) = true ] && vol="MUTE" && exit
+
+vol="$(pamixer --get-volume)"
+
+echo "$vol%"
