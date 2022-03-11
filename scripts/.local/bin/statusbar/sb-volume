@@ -1,11 +1,27 @@
 #!/bin/sh
 
 case $BLOCK_BUTTON in
-	1) setsid -f "$TERMINAL" -e pulsemixer ;;
+	1) audio-output.sh ;;
 	2) pamixer -t ;;
 	4) pamixer -i 5 ;;
 	5) pamixer -d 5 ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-vol="$(pamixer --get-volume)"
+if [ $(pamixer --get-mute) = true ]
+    then 
+        vol="MUTE"
+    else
+        vol="$(pamixer --get-volume)"
+fi
+
+if [[ "$(pactl get-default-sink)"  = "alsa_output.usb-Corsair_Simple_Audio_Listen_00000001-00.analog-stereo" ]]
+	then
+#		pactl set-default-sink alsa_output.usb-SteelSeries_Arctis_Pro_Wireless-00.analog-stereo
+		icon=""
+	else
+#		pacmd set-default-sink alsa_output.usb-Corsair_Simple_Audio_Listen_00000001-00.analog-stereo
+		icon=""
+fi
+
+echo "$icon $vol%"
