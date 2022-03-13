@@ -13,4 +13,4 @@ esac
 vol="$(pamixer --get-volume)"
 
 #echo "$vol%"
-printf "%03d%" "$vol"
+printf "%03d%%" "$vol"
