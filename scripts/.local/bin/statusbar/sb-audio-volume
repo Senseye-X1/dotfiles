@@ -3,14 +3,14 @@
 case $BLOCK_BUTTON in
 	1) pamixer -t ;;
 	2) pamixer -t ;;
-	4) pamixer -i 5 ;;
-	5) pamixer -d 5 ;;
+	4) pactl set-sink-volume @DEFAULT_SINK@ +5% ;;
+	5) pactl set-sink-volume @DEFAULT_SINK@ -5% ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-[ $(pamixer --get-mute) = true ] && echo "MUTE" && exit
+[ $(pactl get-sink-mute @DEFAULT_SINK@) -eq "Mute: yes" ] && echo "MUTE" && exit
 
-vol="$(pamixer --get-volume)"
+vol="$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')"
 
 #echo "$vol%"
 printf "%03d%%" "$vol"
