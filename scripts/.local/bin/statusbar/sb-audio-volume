@@ -1,16 +1,16 @@
 #!/bin/sh
 
 case $BLOCK_BUTTON in
-	1) pamixer -t ;;
-	2) pamixer -t ;;
+	1) pactl set-sink-mute @DEFAULT_SINK@ toggle ;;
+	2) pactl set-sink-mute @DEFAULT_SINK@ toggle ;;
 	4) pactl set-sink-volume @DEFAULT_SINK@ +5% ;;
 	5) pactl set-sink-volume @DEFAULT_SINK@ -5% ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-[ $(pactl get-sink-mute @DEFAULT_SINK@) -eq "Mute: yes" ] && echo "MUTE" && exit
+[ "$(pactl get-sink-mute @DEFAULT_SINK@)" = "Mute: yes" ] && printf "MUTE" && exit
 
 vol="$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')"
 
 #echo "$vol%"
-printf "%03d%%" "$vol"
+printf "%04s" "$vol"
