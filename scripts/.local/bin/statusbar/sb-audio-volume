@@ -13,4 +13,4 @@ esac
 vol="$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')"
 
 #echo "$vol%"
-printf "%04s" "$vol"
+printf "%4s" "$vol"
