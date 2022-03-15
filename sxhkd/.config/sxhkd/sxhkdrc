@@ -132,8 +132,8 @@ super + alt + shift + {h,j,k,l}
 #	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 XF86AudioRaiseVolume
-    amixer -q -D pulse sset Master 5%+ unmute
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
 XF86AudioLowerVolume
-    amixer -q -D pulse sset Master 5%- unmute
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle
