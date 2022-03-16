@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=$ZDOTDIR/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=100
+SAVEHIST=100
 setopt autocd extendedglob nomatch notify
 unsetopt beep
 bindkey -e
