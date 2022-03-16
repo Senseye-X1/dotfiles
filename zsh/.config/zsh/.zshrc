@@ -1,5 +1,5 @@
 # Lines configured by zsh-newuser-install
-HISTFILE=$ZDOTDIR/.histfile
+HISTFILE=${ZDOTDIR:-$HOME}/.histfile
 HISTSIZE=100
 SAVEHIST=100
 setopt autocd extendedglob nomatch notify
@@ -7,7 +7,7 @@ unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/andreas/.config/zsh/.zshrc'
+zstyle :compinstall filename '${ZDOTDIR:-$HOME}/.zshrc'
 
 autoload -Uz compinit
 compinit
