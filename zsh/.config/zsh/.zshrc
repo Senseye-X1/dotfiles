@@ -18,6 +18,7 @@ promptinit
 PROMPT="%K{white}%B%F{blue}   %n@%m %K{254} %K{252} %K{250} %K{248} %K{246} %K{244} %K{242} %K{240} %k %D{%a %b %d} %*"$'\n'"%~/ %f%b"
 #RPROMPT="%F{blue}%D{%a %b %d} %*%f"
 setopt correctall
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
