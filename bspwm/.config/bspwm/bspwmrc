@@ -13,7 +13,7 @@ xautolock -time 15 -locker "systemctl suspend" -detectsleep &
 
 AC=$(grep -m1 'ac = ' ~/.config/polybar/colors.ini | awk '{print $3}')
 
-#bspc wm --reorder-monitors DP-0 HDMI-0
+bspc wm --reorder-monitors DP-0 HDMI-0
 bspc monitor DP-0 -d 1 2
 bspc monitor HDMI-0 -d 3 4
 
