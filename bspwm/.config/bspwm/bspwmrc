@@ -2,9 +2,9 @@
 
 _() { bspc config "$@";  }
 
-sxhkd &
-picom --config ~/.config/picom/picom.conf -b &
-sh ~/.config/polybar/launch.sh
+pgrep -x sxhkd > /dev/null || sxhkd &
+picom --config $HOME/.config/picom/picom.conf -b &
+/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 udiskie &
 light-locker &
 xset s off
@@ -33,6 +33,8 @@ _ gapless_monocle true
 #bspc rule -a Google-chrome desktop='^1'
 bspc rule -a Geany desktop='^3'
 bspc rule -a firefox desktop='^1'
+
+$HOME/.config/polybar/launch.sh
 
 ## workspace 2 (Terminals)
 #declare -a terminal=(Kitty)
