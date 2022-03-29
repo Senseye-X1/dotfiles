@@ -1,7 +1,5 @@
 #! /bin/sh
 
-_() { bspc config "$@";  }
-
 pgrep -x sxhkd > /dev/null || sxhkd &
 picom --config $HOME/.config/picom/picom.conf -b &
 #/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
